@@ -1,8 +1,5 @@
-FROM openjdk:11
+FROM openjdk:11-jre-slim
 
-EXPOSE 8080
-
-ARG JAR_FILE=target/login-tutorial.jar
-ADD ${JAR_FILE} login-tutorial.jar
-
-ENTRYPOINT ["java", "-jar", "/login-tutorial.jar"]
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]всёёёё
